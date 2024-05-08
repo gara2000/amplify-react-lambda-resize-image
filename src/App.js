@@ -1,7 +1,7 @@
 import './App.css';
 import React, {useState, useEffect} from 'react';
 import {v4 as uuid} from 'uuid';
-import {list, getProperties, uploadData, getUrl} from 'aws-amplify/storage';
+import {list, uploadData, getUrl} from 'aws-amplify/storage';
 
 function App() {
   const [images, setImages] = useState([]);
@@ -10,11 +10,10 @@ function App() {
   }, [])
 
   async function onChange(e){
-    // when a file is uploaded, create a unique name and save it using the Storage API
-    const file =  e.target.files[0];
-    const fileType = file.name.split('.')[file.name.split.length - 1];
-
     try{
+      // when a file is uploaded, create a unique name and save it using the Storage API
+      const file =  e.target.files[0];
+      const fileType = file.name.split('.')[file.name.split.length - 1];
       const result = await uploadData({
         path: `public/${uuid()}.${fileType}`,
         data: file,
@@ -28,10 +27,8 @@ function App() {
   }
 
   async function fetchImages(){
-    const files = await list('public/');
-    console.log("App.js: fetchImages function: files: ", files);
-
     try {
+      const files = await list('public/');
       const urls = await Promise.all(files.items.map(
         async file=>{
           try{
@@ -43,7 +40,6 @@ function App() {
           }
         }
       ))
-      console.log(urls);
       setImages(urls);
     }catch(err){
       console.log("error getting url: ", err);
@@ -59,7 +55,7 @@ function App() {
               src={image.url}
               key={image.url}
               style={{width: 500}}
-              alt='Uploaded'
+              alt='S3 image'
             />
           ))
         }
