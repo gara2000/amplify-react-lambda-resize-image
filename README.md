@@ -3,13 +3,13 @@
 ```bash
 	npm aws-amplify @aws-amplify/ui-react uuid
 	amplify init
-	amplify add auth
-	amplify add api 
-	amplify push -y
 ```
 
 ## Adding a Post-Confirmation Lambda Trigger
 Run
 ```bash
 amplify add storage 
+amplify push -y
 ```
+**Note** allow all access permissions for authorized memebers as well as for guests
+**Note** to be able to access files with guest memebers, the files should be included in the public folder in the S3 bucket
