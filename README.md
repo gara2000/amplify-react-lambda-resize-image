@@ -1,4 +1,4 @@
-# React app using Amplify and AWS lambda functions 
+# React app using Amplify: storage, function and auth services 
 ## Getting started
 ```bash
 	npm aws-amplify @aws-amplify/ui-react uuid
