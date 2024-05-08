@@ -11,5 +11,5 @@ Run
 amplify add storage 
 amplify push -y
 ```
-**Note** allow all access permissions for authorized memebers as well as for guests
+**Note** allow all access permissions for authorized memebers as well as for guests   
 **Note** to be able to access files with guest memebers, the files should be included in the public folder in the S3 bucket
