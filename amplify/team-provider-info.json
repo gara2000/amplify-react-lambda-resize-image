@@ -10,6 +10,20 @@
       "StackName": "amplify-resizeimage-dev-60d26",
       "StackId": "arn:aws:cloudformation:us-east-1:381491831224:stack/amplify-resizeimage-dev-60d26/d52db4a0-0c64-11ef-9c02-0ee4a0780ff9",
       "AmplifyAppId": "d3377xttotb931"
+    },
+    "categories": {
+      "auth": {
+        "resizeimage3d02db12": {}
+      },
+      "function": {
+        "S3Trigger5923ea2b": {
+          "deploymentBucketName": "amplify-resizeimage-dev-60d26-deployment",
+          "s3Key": "amplify-builds/S3Trigger5923ea2b-5052334f515845694f47-build.zip"
+        }
+      },
+      "storage": {
+        "resizeimage": {}
+      }
     }
   }
 }

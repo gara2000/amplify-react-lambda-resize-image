@@ -43,7 +43,6 @@ function App() {
           }
         }
       ))
-      console.log(urls);
       setImages(urls);
     }catch(err){
       console.log("error getting url: ", err);
@@ -57,7 +56,6 @@ function App() {
           images.map(image => (
             <img
               src={image.url}
-              key={image.url}
               style={{width: 500}}
               alt='Uploaded'
             />
